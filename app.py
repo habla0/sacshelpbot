@@ -9,6 +9,6 @@ def homepage():
 
 @app.route('/drip')
 def spicy():
-    return send_file("test_image.jpg")
+    return send_file("test_image.jpg") # I need to find a way to get this working with HTML
 
 app.run(debug=True)
