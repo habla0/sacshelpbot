@@ -12,6 +12,4 @@ def homepage():
 def spicy():
     return send_file("test_image.jpg") # I need to find a way to get this working with HTML
 
-
-
 app.run(debug=True)
