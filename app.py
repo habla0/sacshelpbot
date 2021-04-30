@@ -1,16 +1,16 @@
-from flask import Flask, jsonify, request
-from flask_socketio import SocketIO
-import re
+from flask import Flask, jsonify, request, render_template
 import requests
+import re
 
 app = Flask(__name__)
 
+# Temporary homepage
 @app.route('/')
 def homepage():
-    return '<h1 style="font-family: Comic Sans MS", sans-serif>0 bobux</h1>'
+    return render_template('index.html')
 
 @app.route('/bot')
-def bot():
-    
+def bot(someText):
+    pass
 
 app.run(debug=True)
