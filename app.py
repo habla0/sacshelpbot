@@ -10,7 +10,8 @@ def homepage():
     return render_template('index.html')
 
 @app.route('/bot')
-def bot(someText):
-    pass
+def botpage():
+    userInput = request.args["userInput"]
+    return render_template('chat.html')
 
 app.run(debug=True)
