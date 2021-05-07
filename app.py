@@ -9,9 +9,11 @@ app = Flask(__name__)
 def homepage():
     return render_template('index.html')
 
-@app.route('/bot')
+@app.route('/bot', methods=["GET","POST"])
 def botpage():
-    userInput = request.args["userInput"]
+    if request.method == "POST":
+        userInput = request.form.get("userInput")
+        print(userInput)
     return render_template('chat.html')
 
 app.run(debug=True)
