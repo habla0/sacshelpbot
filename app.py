@@ -1,14 +1,19 @@
-from flask import Flask, jsonify, send_file
+from flask import Flask, jsonify, request, render_template
+import requests
 import re
 
 app = Flask(__name__)
 
+# Temporary homepage
 @app.route('/')
 def homepage():
-    return '<h1 style="font-family:Comic Sans MS;text-align:center;font-size:100px;">go to /drip or you have 0 bobux</h1>'
+    return render_template('index.html')
 
-@app.route('/drip')
-def spicy():
-    return send_file("test_image.jpg") # I need to find a way to get this working with HTML
+@app.route('/bot', methods=["GET","POST"])
+def botpage():
+    if request.method == "POST":
+        userInput = request.form.get("userInput")
+        print(userInput)
+    return render_template('chat.html')
 
 app.run(debug=True)
