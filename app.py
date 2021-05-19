@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request, render_template
-import requests
 import re
 
 app = Flask(__name__)
@@ -15,7 +14,7 @@ def botpage():
     if request.method == "POST":
         userInput = request.form.get("userInput")
         # Time for regex
-        search = re.search(r'', userInput)
+        search = re.search(r"^help*.", userInput)
         if search:
             print("Hi here is some help")
     return render_template('chat.html')
