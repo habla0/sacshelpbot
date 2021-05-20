@@ -10,7 +10,7 @@ def homepage():
 
 # Look, 
 @app.route('/bot', methods=["GET","POST"])
-def botpage():
+def helpPage():
     if request.method == "POST":
         userInput = request.form.get("userInput")
         # Time for regex
