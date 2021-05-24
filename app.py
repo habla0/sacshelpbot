@@ -16,7 +16,7 @@ def helpPage():
         # Time for regex
         search = re.search(r"^help*.", userInput)
         if search:
-            print("Hi here is some help")
+            return "Hi here is some help"
     return render_template('chat.html')
 
 app.run(debug=True)
