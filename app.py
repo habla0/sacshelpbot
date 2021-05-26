@@ -23,14 +23,14 @@ def bot():
             botResponse = "Hi here is some help"
             conversation.append(botResponse)
         
-        #It's not done
+        # This is more of a stub than anything
         otherThing = re.search(r".*doing work", userInput)
         if otherThing:
             botResponse = "do your work"
-            coversation.append(botResponse)
-
-        return render_template('chat.html', conversation=conversation)
+            conversation.append(botResponse)
+            
         print(conversation)
+        return render_template('chat.html', conversation=conversation)
     return render_template('chat.html') # I'm sure this won't cause any problems later
 
 app.run(debug=True)
