@@ -2,15 +2,23 @@
 <html>
     <head>
         <title>SACS Help</title>
-        <link rel="stylesheet" href="../sacshelpbot/templates/chat.css">
+        <link rel="stylesheet" href="..\sacshelpbot\templates\chat.css">
     </head>
     <body>
         <h1>2 bobux</h1>
-        <div class="messageBox">
+        <!--<div class="messageBox">
             {% for thing in conversation %}
                 <p>{{ thing }}</p>
             {% endfor %}
         </div>
+        -->
+        {% for message in conversation %}
+            <div class="msgBox">
+                sheeh
+                <p>{{message}}</p>
+            </div>
+        {% endfor %}
+
         <form action="/bot" method="POST">
             <input type="text" id="userInput" name="userInput" placeholder="Type your message here">
             <input type="submit" value="Send">
