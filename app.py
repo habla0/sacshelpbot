@@ -17,18 +17,19 @@ def bot():
         userInput = request.form.get("userInput")
         conversation.append(userInput)
 
+        # could i use JSON instead? like {author: '', msg:''}
         # Help: type in help and you get help
-        helpFunc = re.search(r"*.help*.", userInput)
+        helpFunc = re.search(r"^help*.", userInput, re.IGNORECASE)
         if helpFunc:
-            botResponse = "Hi here is some help"
-            conversation.append(botResponse)
+            helpResponse = "Hi here is some help"
+            conversation.append(helpResponse)
         
         # Directions: Say I'm lost and then the bot will give instructions
         lost = re.search(r"^(im|i'm) lost*.|*.directions*.", userInput, re.IGNORECASE) # 
         if lost:
-            lostConvo = []
-            botResponse = ""
-            conversation.append(botResponse)
+            dirResponse = "Where do you want to go?"
+            
+            conversation.append(dirResponse)
             
         print(conversation)
         return render_template('chat.html', conversation=conversation)
