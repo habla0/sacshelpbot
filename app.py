@@ -17,16 +17,17 @@ def bot():
         userInput = request.form.get("userInput")
         conversation.append(userInput)
 
-        # Help function, type in help and you get help
-        helpFunc = re.search(r"^.*help*.", userInput)
+        # Help: type in help and you get help
+        helpFunc = re.search(r"*.help*.", userInput)
         if helpFunc:
             botResponse = "Hi here is some help"
             conversation.append(botResponse)
         
-        # This is more of a stub than anything
-        otherThing = re.search(r".*doing work", userInput)
-        if otherThing:
-            botResponse = "do your work"
+        # Directions: Say I'm lost and then the bot will give instructions
+        lost = re.search(r"^(im|i'm) lost*.|*.directions*.", userInput, re.IGNORECASE) # 
+        if lost:
+            lostConvo = []
+            botResponse = ""
             conversation.append(botResponse)
             
         print(conversation)
