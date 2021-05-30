@@ -13,23 +13,37 @@ def homepage():
 @app.route('/bot', methods=["GET","POST"])
 def bot():
     global conversation
+    responseDict = {
+        "help": "Help msg",
+        "homework": "do homework",
+        "where": "ahhhh",
+        "another": "beep"
+    }
+    if request.method == "GET":
+        print('get')
+        return render_template('chat.html', conversation=conversation)
+
     if request.method == "POST":
         userInput = request.form.get("userInput")
         conversation.append(userInput)
 
-        # could i use JSON instead? like {author: '', msg:''}
-        # Help: type in help and you get help
-        helpFunc = re.search(r"^help*.", userInput, re.IGNORECASE)
-        if helpFunc:
-            helpResponse = "Hi here is some help"
-            conversation.append(helpResponse)
+        # because im checking for every key, its going to spit many responses
+        for key in responseDict:
+            print('key:',key)
+            print('user:',userInput)
+
+            if key in userInput:
+                botMsg = responseDict[key]
+                conversation.append(botMsg)
+                print('dictkey:',responseDict[key])
+                break # bad fix
+            else: 
+                botMsg = "default" # this is broken, will print until key in input
+                conversation.append(botMsg)
+                
+
+                
         
-        # Directions: Say I'm lost and then the bot will give instructions
-        lost = re.search(r"^(im|i'm) lost*.|*.directions*.", userInput, re.IGNORECASE) # 
-        if lost:
-            dirResponse = "Where do you want to go?"
-            
-            conversation.append(dirResponse)
             
         print(conversation)
         return render_template('chat.html', conversation=conversation)
