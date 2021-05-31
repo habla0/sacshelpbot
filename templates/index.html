@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="static/main.css">
+    </head>
     <body>
-        <h1 style="font-family: Comic Sans MS", sans-serif>0 bobux</h1>
+        <h1>Help Bot @ SACS</h1>
         <p>
-            Yes hello this is not the bot, press the button for the bot
+            This is a bot meant for students to interact with.<br>
+            With this bot you can ask it for directions to each part of the school<br>
+            or ask it for study help.
         </p>
-        <input type="button" id="theButton" text="Click here for bot">
+        <div>
+            <input type="button" id="theButton" value="Click here for bot">
+        </div>
         <script>
             document.getElementById("theButton").onclick = function() {
                 location.href = "/bot";

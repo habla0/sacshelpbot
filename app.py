@@ -34,7 +34,7 @@ def bot():
         ("how are you",): "I'm not bad, I guess.",
         ("english",): "Start preparing early! Quote tables and drafts are your best friend (other than me of course) :)",
         ("ib",): "Sorry, I don't speak cringe.",
-        ("hsc",): "Sam Davis slander????????? 😲😨😱😰😳😳🤪"
+        ("hsc",): "Infinitely better than the IB I feel."
         # I really can't think of more things to add rn - 2:31am, 1/06/2021
     }
 
@@ -101,26 +101,6 @@ def bot():
 
         conversation.append(botMsg)
 
-        # A prime example of why you shouldn't code while tired
-        # bad bad bad bad code NEVER EVER do this
-        '''
-        try:
-            if conversation[-3] == "help":
-                print("ENTERED STAGE 2")
-                print("USER INPUT IS:",userInput)
-                if conversation[-2] == "homework" or conversation[-2] == "study":
-                    for key in helpResponseDict:
-                        for keyword in key:
-                            print("STAGE 2: ",keyword)     
-                            if keyword in userInput:
-                                print("USER INPUT AGAIN IS:",userInput)
-                                print('RESPONSE STAGE 2:',keyword)
-                                botMsg = responseDict[key]
-            conversation.append(botMsg)
-        except:
-        '''
-        
-        #print(conversation)
         return render_template('chat.html', conversation=conversation)
 
 app.run(debug=True)
