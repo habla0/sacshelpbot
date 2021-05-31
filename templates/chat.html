@@ -7,15 +7,16 @@
     <body>
         <h1>2 bobux</h1>
 
-        <div class="messageBox">
+        <div class="container">
             {% for message in conversation %}
-                <p>{{ message }}</p>
+                <p class="messageBox">{{ message }}</p>
             {% endfor %}
         </div>
-
-        <form action="/bot" method="POST">
-            <input type="text" id="userInput" name="userInput" placeholder="Type your message here">
-            <input type="submit" value="Send">
-        </form>
+        <div class="textBox">
+            <form action="/bot" method="POST">
+                <input type="text" id="userInput" name="userInput" placeholder="Type your message here">
+                <input type="submit" value="Send">
+            </form>
+        </div>
     </body>
 </html>

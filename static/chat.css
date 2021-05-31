@@ -1,13 +1,24 @@
 * { box-sizing: border-box; }
 
 .messageBox {
-    border-radius: 5px;
-    padding: 50px;
-    margin: 20px;
-    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 25px;
+    color: rgb(255, 255, 255);
     background-color: rgb(46, 175, 109);
 }
 
+.textBox {
+    text-align: center;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 input[type=text] {
-    width: 100%;
+    width: 70%;
+    padding: 10px 10px;
+    border-radius: 20px;
+    outline: none;
 }
