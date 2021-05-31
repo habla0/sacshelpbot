@@ -35,6 +35,7 @@ def bot():
         ("english",): "Start preparing early! Quote tables and drafts are your best friend (other than me of course) :)",
         ("ib",): "Sorry, I don't speak cringe.",
         ("hsc",): "Infinitely better than the IB I feel.",
+        ("i dont know","dont know","i don't know", "don't know"): "Righto",
         ("i dont know what to do","i don't know what to do"): "Ah time for some tips. You should ask me about directions or some study advice."
         # I really can't think of more things to add rn - 2:31am, 1/06/2021
     }
